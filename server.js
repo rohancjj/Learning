@@ -11,6 +11,6 @@ app.use("/api/contacts",contactRoutes)
 app.use(errorhandler)
 
 app.listen(PORT,()=>{
-    console.log(`server is running on port ${PORT}`);
+    console.log(`server is running on PORT ${PORT}`);
     
 })
