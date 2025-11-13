@@ -1,9 +1,11 @@
-const getContacts = (req,res)=>{
+const asyncHandler = require("express-async-handler")
+
+const getContacts = asyncHandler(async (req,res)=>{
     res.status(200).json({message: "get all contacts"})
-}
+})
 
 
-const createContact = (req,res)=>{
+const createContact = asyncHandler(async (req,res)=>{
     console.log("the request body is :",req.body);
 
     const {name,email,phone} = req.body
@@ -13,15 +15,15 @@ const createContact = (req,res)=>{
     }
     
     res.status(201).json({message: "Create contacts"})
-}
-const getContact = (req,res)=>{
+})
+const getContact = asyncHandler(async (req,res)=>{
     res.status(201).json({message: `get contacts for ${req.params.id}`})
-}
-const updateContact = (req,res)=>{
+})
+const updateContact = asyncHandler(async (req,res)=>{
     res.status(201).json({message: `update contacts for ${req.params.id}`})
-}
-const deleteContact = (req,res)=>{
+})
+const deleteContact = asyncHandler(async (req,res)=>{
     res.status(201).json({message: `delete contacts for ${req.params.id}`})
-}
+})
 
 module.exports = {getContacts,getContact,createContact,updateContact,deleteContact}
