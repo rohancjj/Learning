@@ -6,7 +6,7 @@ const errorhandler = (err,req,res,next) =>{
 switch (statusCode) {
     case constants.VALIDATION_ERROR:
          res.json({
-            title: "validation failed",
+            title: "Validation failed",
             message: err.message,
             stackTrace: err.stack
         })
