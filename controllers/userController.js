@@ -14,7 +14,7 @@ const registerUser = asyncHandler(async(req,res)=>{
         res.status(400)
         throw new Error("user already register")
     }
-    const hashedPassword = await bcrypt.hash(password,10)
+    const hashedPassword = await bcrypt.hash(password,12)
     console.log("hashed password:",hashedPassword);
     const user = await User.create({
         username,
